@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  redis-api:
+    container_name: redis-api
+    image: ${DOCKER_REGISTRY-}redisapi
+    build:
+      context: .
+      dockerfile: redis-api/Dockerfile
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: always
